@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CubeControlScript : MonoBehaviour
 {
+
+     public GameObject snowballCloneTemplate
     // Start is called before the first frame update
     void Start()
     {
@@ -13,14 +15,25 @@ public class CubeControlScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown) (KeyCode.W) 
+        if (Input.GetKeyDown) (KeyCode.W)
         {
             transform.position += Vector3.forward * Time.deltaTime;
         }
-       
+
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(Vector3.up,90) * Time.deltaTime;
+            transform.Rotate(Vector3.up, 90) * Time.deltaTime;
         }
+
+        if (Input.GetMouseButton(0))
+        {
+            GameObject newGO = Instatiate(snowballCloneTemplate);
+
+            snowballControlScript mySnowball = newGO.GetComponent<snowballControlScript>();
+
+            mySnowball.ImThrowingYou(CubeControl CubeControl)
+        }
+    
+    }
     }
 }
